@@ -4,6 +4,7 @@ package org.launchcode.controller;
 import jakarta.validation.Valid;
 import org.launchcode.data.EventData;
 import org.launchcode.models.Event;
+import org.launchcode.models.EventType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -20,11 +21,11 @@ public class EventController {
             return "events/index";
         }
 
-
-
         @GetMapping("create")
         public String displayCreateEventForm(Model model) {
             model.addAttribute("title", "Create Event");
+            model.addAttribute(new Event());
+            model.addAttribute("types", EventType.values());
             return "events/create";
         }
 
