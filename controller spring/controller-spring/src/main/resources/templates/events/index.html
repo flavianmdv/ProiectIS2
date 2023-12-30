@@ -12,12 +12,14 @@
       <th scope="col">ID</th>
       <th scope="col">Name</th>
       <th scope="col">Description</th>
+      <th scope="col">Contact Email</th>
     </tr>
   </thead>
   <tr th:each="event : ${events}">
     <td th:text="${event.id}"></td>
     <td th:text="${event.name}"></td>
     <td th:text="${event.description}"></td>
+    <td th:text="${event.contactEmail}"></td>
   </tr>
 </table>
 
